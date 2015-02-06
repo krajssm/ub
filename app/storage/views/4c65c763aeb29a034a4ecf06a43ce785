@@ -1,0 +1,10 @@
+<html>
+	<head>
+		<title>Login</title>
+	</head>
+    <body>
+        <h1>NMG Login</h1>
+
+        <?php echo $__env->yieldContent('content'); ?>
+    </body>
+</html>

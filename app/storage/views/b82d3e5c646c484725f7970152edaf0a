@@ -1,0 +1,64 @@
+<?php $__env->startSection('content'); ?>
+
+	<?php echo Form::open(array('url' => 'dashboard')); ?>
+
+		<h1>User Dashboard</h1>
+
+		<!-- if there are login errors, show them here -->
+		<?php if(Session::get('dashboardError')): ?>
+		<div class="alert alert-danger"><?php echo Session::get('dashboardError'); ?></div>
+		<?php endif; ?>
+
+		<p>
+			<?php echo $errors->first('email'); ?>
+
+			<?php echo $errors->first('password'); ?>
+
+			<?php echo $errors->first('name'); ?>
+
+		</p>
+
+		<p>
+			<?php echo Form::label('email', 'Email Address'); ?>
+
+			<?php echo Form::text('email', $usersData["email"], array('placeholder' => 'awesome@awesome.com')); ?>
+
+		</p>
+
+		<p>
+			<?php echo Form::label('password', 'Password'); ?>
+
+			<?php echo Form::password('password'); ?>
+
+		</p>
+
+		<p>
+			<?php echo Form::label('name', 'Name'); ?>
+
+			<?php echo Form::text('name',$usersData["name"]); ?>
+
+		</p>
+
+		<p>
+			<?php echo Form::label('address', 'Address'); ?>
+
+			<?php echo Form::text('address',$usersDetail["address"]); ?>
+
+		</p>
+
+		<p>
+			<?php echo Form::label('pincode', 'Zip'); ?>
+
+			<?php echo Form::text('pincode',$usersDetail["pincode"]); ?>
+
+		</p>
+
+
+		<p><?php echo Form::submit('Submit!'); ?></p>
+	<?php echo Form::close(); ?>
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('users/userlayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

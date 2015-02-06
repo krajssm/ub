@@ -1,0 +1,17 @@
+<?php $__env->startSection('content'); ?>
+
+
+<?php foreach($applications as $key=>$value): ?>
+    The current value is <?php echo $value->title; ?>
+
+    <br />
+    <br />
+<?php endforeach; ?>
+
+<?php echo $applications->links(); ?>
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('application/applayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
